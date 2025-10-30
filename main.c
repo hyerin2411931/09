@@ -6,7 +6,7 @@
 int main(int argc, char *argv[])
 {
   int i;
-  int a[SIZE] = {1,2,3,4,5};
+  int a[SIZE] = {1,3,3,4,5};
   int b[SIZE] = {1,2,3,4,5};
   int flag_same = 1;
   
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
   {
     if(a[i] != b[i])
     {
-      printf("배열은 다른  값을 가집니다.\n");
+      printf("%d번째 배열은%d, %d로  다른  값을 가집니다.\n", i, a[i], b[i]);
       flag_same = 0;
     }
     else
