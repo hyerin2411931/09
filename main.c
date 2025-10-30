@@ -1,27 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 5  //전처리기. 매크로. SIZE라는 거를 전부 5로 바꿈. 
+#define SIZE 4  //전처리기. 매크로. SIZE라는 거를 전부 5로 바꿈. 
 
+void square_array(int a[], int size);
+void print_array(int a[], int size);
 
 int main(int argc, char *argv[])
 {
-  int i;
-  int a[SIZE] = {1,3,3,4,5};
-  int b[SIZE] = {1,2,3,4,5};
-  int flag_same = 1;
+  int list[SIZE] = {1,2,3,4};
   
-  for(i = 0; i < SIZE; i++)
-  {
-    if(a[i] != b[i])
-    {
-      printf("%d번째 배열은%d, %d로  다른  값을 가집니다.\n", i, a[i], b[i]);
-      flag_same = 0;
-    }
-    else
-    printf("배열은 같은 값을 가집니다.\n"); 
-  } 
-  
+  print_array(list, SIZE);
+  square_array(list, SIZE);    //배열은 복사본이 아니라 원본을 가져오니까 배열 안의 값 자체가 바뀌게 됨. 
+  print_array(list, SIZE);
   
   system("PAUSE");	
   return 0;
 }
+
+void square_array(int a[], int size){
+  int i;
+  
+  for(i=0; i < size; i++)
+    a[i] = a[i]*a[i];}
+  
+void print_array(int a[], int size){
+  int i;
+  
+  for(i=0; i < size; i++)
+    printf("%3d", a[i]);
+  printf("\n");}
