@@ -1,18 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define SIZE 5 
 
 int main(int argc, char *argv[])
 {
-  int i;
-  int grade[5];
-  grade[0] = 10;
-  grade[1] = 20;
-  grade[2] = 30;
-  grade[3] = 40;
-  grade[4] = 50;
+  int i, average;
+  int sum=0;
+  int grade[SIZE];
   
-  for(i=0; i<5; i++)
-  printf("grade[%d] = %d\n", i, grade[i]);
+  for(i = 0; i < SIZE; i++){   // <=SIZE 아니고 <SIZE 여야 SIZE 개수만큼 반복문 돌음.  
+    printf("input grade:");
+    scanf("%d", &grade[i]);
+    sum += grade[i];
+    }
+  average = sum/SIZE;
+  printf("average = %d\n", average);  
+  
   
   system("PAUSE");	
   return 0;
